@@ -1,12 +1,18 @@
 name: Build Job
 on: 
- # push:
-  #  branches: 
-   #   - main
+  push:
+    branches: 
+      - main
 
   pull_request:
     branches: 
       - main
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 2 * * *"   # nightly run at 2 AM UTC
+
 
 jobs:
   Build:
